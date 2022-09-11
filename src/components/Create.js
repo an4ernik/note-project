@@ -38,15 +38,24 @@ function Create() {
     }
 
   return (
-    <div>
-      <form onSubmit={loadDataFromForm} className={formClass}>
-        <label htmlFor="">Введіть замітку</label>
-        <textarea name="note" id="note" defaultValue="Test"></textarea>
-        <button type="submit">Створити</button>
-      </form>
-      <div className={lineClass}>
-        <div>{url}</div>
-        <div><button onClick={function(){window.location.reload()}}>Створити нову замітку</button></div>
+    <div className="row">
+      <div className="col-12">
+        <div className="text">
+          <form onSubmit={loadDataFromForm} className={formClass}>
+            <div className="form-group">
+              <label htmlFor="">Введіть замітку</label>
+              <textarea name="note" id="note" defaultValue="Test" className="form-control"></textarea>
+            </div>
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary text-right">Створити</button>
+            </div>
+          </form>
+          <div className={lineClass}>
+            <div className="alert alert-primary">{url}</div>
+            <p>Скопіюйте URL та передайте адресату</p>
+            <div><button onClick={function(){window.location.reload()}} className="btn btn-primary">Створити нову замітку</button></div>
+          </div>
+        </div>
       </div>
     </div>
   );
